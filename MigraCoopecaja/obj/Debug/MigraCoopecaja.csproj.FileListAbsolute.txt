@@ -1,0 +1,11 @@
+C:\Users\cgonzalez.COOPECAJA\Documents\Tareas\2015\PsBank\DatosBD\SistemaMigracion\MigraCoopecaja\MigraCoopecaja\bin\Debug\MigraCoopecaja.exe.config
+C:\Users\cgonzalez.COOPECAJA\Documents\Tareas\2015\PsBank\DatosBD\SistemaMigracion\MigraCoopecaja\MigraCoopecaja\obj\Debug\MigraCoopecaja.csprojResolveAssemblyReference.cache
+C:\Users\cgonzalez.COOPECAJA\Documents\Tareas\2015\PsBank\DatosBD\SistemaMigracion\MigraCoopecaja\MigraCoopecaja\obj\Debug\MigraCoopecaja.Properties.Resources.resources
+C:\Users\cgonzalez.COOPECAJA\Documents\Tareas\2015\PsBank\DatosBD\SistemaMigracion\MigraCoopecaja\MigraCoopecaja\obj\Debug\MigraCoopecaja.csproj.GenerateResource.Cache
+C:\Users\cgonzalez.COOPECAJA\Documents\Tareas\2015\PsBank\DatosBD\SistemaMigracion\MigraCoopecaja\MigraCoopecaja\bin\Debug\MigraCoopecaja.exe
+C:\Users\cgonzalez.COOPECAJA\Documents\Tareas\2015\PsBank\DatosBD\SistemaMigracion\MigraCoopecaja\MigraCoopecaja\bin\Debug\MigraCoopecaja.pdb
+C:\Users\cgonzalez.COOPECAJA\Documents\Tareas\2015\PsBank\DatosBD\SistemaMigracion\MigraCoopecaja\MigraCoopecaja\obj\Debug\MigraCoopecaja.exe
+C:\Users\cgonzalez.COOPECAJA\Documents\Tareas\2015\PsBank\DatosBD\SistemaMigracion\MigraCoopecaja\MigraCoopecaja\obj\Debug\MigraCoopecaja.pdb
+C:\Users\cgonzalez.COOPECAJA\Documents\Tareas\2015\PsBank\DatosBD\SistemaMigracion\MigraCoopecaja\MigraCoopecaja\obj\Debug\MigraCoopecaja.FrmPlanificacion.resources
+C:\Users\cgonzalez.COOPECAJA\Documents\Tareas\2015\PsBank\DatosBD\SistemaMigracion\MigraCoopecaja\MigraCoopecaja\obj\Debug\MigraCoopecaja.FrmPrincipal.resources
+C:\Users\cgonzalez.COOPECAJA\Documents\Tareas\2015\PsBank\DatosBD\SistemaMigracion\MigraCoopecaja\MigraCoopecaja\obj\Debug\MigraCoopecaja.FrmHitos.resources

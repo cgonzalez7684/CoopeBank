@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CoopeBankModelStoreContainer" CdmEntityContainer="CoopeBankEntities">
+    <EntitySetMapping Name="AHORROS_BIT_TRAS">
+      <EntityTypeMapping TypeName="CoopeBankModel.AHORROS_BIT_TRAS">
+        <MappingFragment StoreEntitySet="AHORROS_BIT_TRAS">
+          <ScalarProperty Name="cod_cliente" ColumnName="cod_cliente" />
+          <ScalarProperty Name="num_contrato" ColumnName="num_contrato" />
+          <ScalarProperty Name="accion" ColumnName="accion" />
+          <ScalarProperty Name="fecIngreso" ColumnName="fecIngreso" />
+          <ScalarProperty Name="codUsuario" ColumnName="codUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modulos">
+      <EntityTypeMapping TypeName="CoopeBankModel.Modulos">
+        <MappingFragment StoreEntitySet="Modulos">
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+          <ScalarProperty Name="DesModulo" ColumnName="DesModulo" />
+          <ScalarProperty Name="EstModulo" ColumnName="EstModulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pantallas">
+      <EntityTypeMapping TypeName="CoopeBankModel.Pantallas">
+        <MappingFragment StoreEntitySet="Pantallas">
+          <ScalarProperty Name="IdSubOp" ColumnName="IdSubOp" />
+          <ScalarProperty Name="IdPantalla" ColumnName="IdPantalla" />
+          <ScalarProperty Name="DesPantalla" ColumnName="DesPantalla" />
+          <ScalarProperty Name="NomPantalla" ColumnName="NomPantalla" />
+          <ScalarProperty Name="EstPantalla" ColumnName="EstPantalla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permisos">
+      <EntityTypeMapping TypeName="CoopeBankModel.Permisos">
+        <MappingFragment StoreEntitySet="Permisos">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdObjeto" ColumnName="IdObjeto" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="Lectura" ColumnName="Lectura" />
+          <ScalarProperty Name="Escritura" ColumnName="Escritura" />
+          <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubOpciones">
+      <EntityTypeMapping TypeName="CoopeBankModel.SubOpciones">
+        <MappingFragment StoreEntitySet="SubOpciones">
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+          <ScalarProperty Name="IdSubOp" ColumnName="IdSubOp" />
+          <ScalarProperty Name="DesSubOp" ColumnName="DesSubOp" />
+          <ScalarProperty Name="NomBoton" ColumnName="NomBoton" />
+          <ScalarProperty Name="EstSuubOp" ColumnName="EstSuubOp" />
+          <ScalarProperty Name="ImgIndex" ColumnName="ImgIndex" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoServicioSinpe">
+      <EntityTypeMapping TypeName="CoopeBankModel.TipoServicioSinpe">
+        <MappingFragment StoreEntitySet="TipoServicioSinpe">
+          <ScalarProperty Name="codServicio" ColumnName="codServicio" />
+          <ScalarProperty Name="DescServicio" ColumnName="DescServicio" />
+          <ScalarProperty Name="TipoServicio" ColumnName="TipoServicio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="CoopeBankModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="CambiarClave" ColumnName="CambiarClave" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vTipoNomina">
+      <EntityTypeMapping TypeName="CoopeBankModel.vTipoNomina">
+        <MappingFragment StoreEntitySet="vTipoNomina">
+          <ScalarProperty Name="NOMINA" ColumnName="NOMINA" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CargaPagosCGP">
+      <EntityTypeMapping TypeName="CoopeBankModel.CargaPagosCGP">
+        <MappingFragment StoreEntitySet="CargaPagosCGP">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+          <ScalarProperty Name="CuentaClienteDestino" ColumnName="CuentaClienteDestino" />
+          <ScalarProperty Name="TitularServicio" ColumnName="TitularServicio" />
+          <ScalarProperty Name="IdDestino" ColumnName="IdDestino" />
+          <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="consultarPagosCGP" FunctionName="CoopeBankModel.Store.consultarPagosCGP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CoopeBankModel.consultarPagosCGP_Result">
+          <ScalarProperty Name="CodMoneda" ColumnName="CodMoneda" />
+          <ScalarProperty Name="Servicio" ColumnName="Servicio" />
+          <ScalarProperty Name="IdNegocio" ColumnName="IdNegocio" />
+          <ScalarProperty Name="NomNegocio" ColumnName="NomNegocio" />
+          <ScalarProperty Name="CuentaClienteOrigen" ColumnName="CuentaClienteOrigen" />
+          <ScalarProperty Name="IdDestino" ColumnName="IdDestino" />
+          <ScalarProperty Name="TitularServicio" ColumnName="TitularServicio" />
+          <ScalarProperty Name="CuentaClienteDestino" ColumnName="CuentaClienteDestino" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="consultarNominaPago" FunctionName="CoopeBankModel.Store.consultarNominaPago">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CoopeBankModel.consultarNominaPago_Result">
+          <ScalarProperty Name="CodMoneda" ColumnName="CodMoneda" />
+          <ScalarProperty Name="Servicio" ColumnName="Servicio" />
+          <ScalarProperty Name="IdNegocio" ColumnName="IdNegocio" />
+          <ScalarProperty Name="NomNegocio" ColumnName="NomNegocio" />
+          <ScalarProperty Name="CuentaClienteOrigen" ColumnName="CuentaClienteOrigen" />
+          <ScalarProperty Name="IdDestino" ColumnName="IdDestino" />
+          <ScalarProperty Name="TitularServicio" ColumnName="TitularServicio" />
+          <ScalarProperty Name="CuentaClienteDestino" ColumnName="CuentaClienteDestino" />
+          <ScalarProperty Name="Monto" ColumnName="Monto" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="ParametrosArcCGP">
+      <EntityTypeMapping TypeName="CoopeBankModel.ParametrosArcCGP">
+        <MappingFragment StoreEntitySet="ParametrosArcCGP">
+          <ScalarProperty Name="FecModificacion" ColumnName="FecModificacion" />
+          <ScalarProperty Name="NomNegocio" ColumnName="NomNegocio" />
+          <ScalarProperty Name="IdNegocio" ColumnName="IdNegocio" />
+          <ScalarProperty Name="CuentaClienteOrigenCol" ColumnName="CuentaClienteOrigenCol" />
+          <ScalarProperty Name="CuentaClienteOrigenDol" ColumnName="CuentaClienteOrigenDol" />
+          <ScalarProperty Name="CodEntidad" ColumnName="CodEntidad" />
+          <ScalarProperty Name="FecGeneracion" ColumnName="FecGeneracion" />
+          <ScalarProperty Name="IdConsecutivo" ColumnName="IdConsecutivo" />
+          <ScalarProperty Name="IdNumEnvio" ColumnName="IdNumEnvio" />
+          <ScalarProperty Name="CodColones" ColumnName="CodColones" />
+          <ScalarProperty Name="CodDolares" ColumnName="CodDolares" />
+          <ScalarProperty Name="IdRegistro" ColumnName="IdRegistro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

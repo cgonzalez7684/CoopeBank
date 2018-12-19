@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoopeBankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AHORROS_BIT_TRAS">
+    <Key>
+      <PropertyRef Name="cod_cliente" />
+      <PropertyRef Name="num_contrato" />
+      <PropertyRef Name="fecIngreso" />
+    </Key>
+    <Property Name="cod_cliente" Type="int" Nullable="false" />
+    <Property Name="num_contrato" Type="int" Nullable="false" />
+    <Property Name="accion" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="fecIngreso" Type="datetime" Nullable="false" />
+    <Property Name="codUsuario" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CargaPagosCGP">
+    <Key>
+      <PropertyRef Name="IdRegistro" />
+    </Key>
+    <Property Name="IdRegistro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdDestino" Type="varchar" MaxLength="50" />
+    <Property Name="TitularServicio" Type="varchar" MaxLength="100" />
+    <Property Name="CuentaClienteDestino" Type="varchar" MaxLength="100" />
+    <Property Name="Monto" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="IdUsuario" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="IdModulo" />
+    </Key>
+    <Property Name="IdModulo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesModulo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EstModulo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pantallas">
+    <Key>
+      <PropertyRef Name="IdPantalla" />
+    </Key>
+    <Property Name="IdSubOp" Type="int" Nullable="false" />
+    <Property Name="IdPantalla" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesPantalla" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NomPantalla" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EstPantalla" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ParametrosArcCGP">
+    <Key>
+      <PropertyRef Name="IdRegistro" />
+    </Key>
+    <Property Name="IdRegistro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodDolares" Type="int" />
+    <Property Name="CodColones" Type="int" />
+    <Property Name="IdNumEnvio" Type="int" Nullable="false" />
+    <Property Name="IdConsecutivo" Type="int" Nullable="false" />
+    <Property Name="FecGeneracion" Type="datetime" Nullable="false" />
+    <Property Name="CodEntidad" Type="int" Nullable="false" />
+    <Property Name="CuentaClienteOrigenDol" Type="varchar" MaxLength="100" />
+    <Property Name="CuentaClienteOrigenCol" Type="varchar" MaxLength="100" />
+    <Property Name="IdNegocio" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NomNegocio" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FecModificacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+      <PropertyRef Name="IdObjeto" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" Nullable="false" />
+    <Property Name="IdObjeto" Type="int" Nullable="false" />
+    <Property Name="Visible" Type="int" Nullable="false" />
+    <Property Name="Lectura" Type="int" Nullable="false" />
+    <Property Name="Escritura" Type="int" Nullable="false" />
+    <Property Name="Borrado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SubOpciones">
+    <Key>
+      <PropertyRef Name="IdSubOp" />
+    </Key>
+    <Property Name="IdModulo" Type="int" Nullable="false" />
+    <Property Name="IdSubOp" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DesSubOp" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NomBoton" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="EstSuubOp" Type="int" Nullable="false" />
+    <Property Name="ImgIndex" Type="int" />
+  </EntityType>
+  <EntityType Name="TipoServicioSinpe">
+    <Key>
+      <PropertyRef Name="codServicio" />
+    </Key>
+    <Property Name="codServicio" Type="int" Nullable="false" />
+    <Property Name="DescServicio" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="TipoServicio" Type="nchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Clave" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" />
+    <Property Name="Apellido1" Type="varchar" MaxLength="30" />
+    <Property Name="Apellido2" Type="varchar" MaxLength="30" />
+    <Property Name="Correo" Type="varchar" MaxLength="30" />
+    <Property Name="Estado" Type="int" />
+    <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="CambiarClave" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CoopeBank.dbo.vTipoNomina' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vTipoNomina">
+    <Key>
+      <PropertyRef Name="NOMINA" />
+      <PropertyRef Name="DESCRIPCION" />
+    </Key>
+    <Property Name="NOMINA" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Pantallas__IdSub__3C69FB99">
+    <End Role="SubOpciones" Type="Self.SubOpciones" Multiplicity="1" />
+    <End Role="Pantallas" Type="Self.Pantallas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubOpciones">
+        <PropertyRef Name="IdSubOp" />
+      </Principal>
+      <Dependent Role="Pantallas">
+        <PropertyRef Name="IdSubOp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Permisos__IdUsua__46E78A0C">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Permisos">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SubOpcion__IdMod__3B75D760">
+    <End Role="Modulos" Type="Self.Modulos" Multiplicity="1" />
+    <End Role="SubOpciones" Type="Self.SubOpciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulos">
+        <PropertyRef Name="IdModulo" />
+      </Principal>
+      <Dependent Role="SubOpciones">
+        <PropertyRef Name="IdModulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="consultarNominaPago" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fechaPago" Type="date" Mode="In" />
+    <Parameter Name="tipoNomina" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="consultarPagosCGP" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tipoPago" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Fun_sinpe_FormateaCedula" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="varchar">
+    <Parameter Name="Cedula" Type="varchar" Mode="In" />
+    <Parameter Name="TipCed" Type="varchar" Mode="In" />
+    <Parameter Name="TipProc" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="CoopeBankModelStoreContainer">
+    <EntitySet Name="AHORROS_BIT_TRAS" EntityType="Self.AHORROS_BIT_TRAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CargaPagosCGP" EntityType="Self.CargaPagosCGP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Modulos" EntityType="Self.Modulos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pantallas" EntityType="Self.Pantallas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ParametrosArcCGP" EntityType="Self.ParametrosArcCGP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubOpciones" EntityType="Self.SubOpciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoServicioSinpe" EntityType="Self.TipoServicioSinpe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vTipoNomina" EntityType="Self.vTipoNomina" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vTipoNomina].[NOMINA] AS [NOMINA], 
+    [vTipoNomina].[DESCRIPCION] AS [DESCRIPCION]
+    FROM [dbo].[vTipoNomina] AS [vTipoNomina]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Pantallas__IdSub__3C69FB99" Association="Self.FK__Pantallas__IdSub__3C69FB99">
+      <End Role="SubOpciones" EntitySet="SubOpciones" />
+      <End Role="Pantallas" EntitySet="Pantallas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Permisos__IdUsua__46E78A0C" Association="Self.FK__Permisos__IdUsua__46E78A0C">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Permisos" EntitySet="Permisos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SubOpcion__IdMod__3B75D760" Association="Self.FK__SubOpcion__IdMod__3B75D760">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="SubOpciones" EntitySet="SubOpciones" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoopeBankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CoopeBankEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AHORROS_BIT_TRAS" EntityType="CoopeBankModel.AHORROS_BIT_TRAS" />
+    <EntitySet Name="Modulos" EntityType="CoopeBankModel.Modulos" />
+    <EntitySet Name="Pantallas" EntityType="CoopeBankModel.Pantallas" />
+    <EntitySet Name="Permisos" EntityType="CoopeBankModel.Permisos" />
+    <EntitySet Name="SubOpciones" EntityType="CoopeBankModel.SubOpciones" />
+    <EntitySet Name="Usuarios" EntityType="CoopeBankModel.Usuarios" />
+    <AssociationSet Name="FK__SubOpcion__IdMod__3B75D760" Association="CoopeBankModel.FK__SubOpcion__IdMod__3B75D760">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="SubOpciones" EntitySet="SubOpciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pantallas__IdSub__3C69FB99" Association="CoopeBankModel.FK__Pantallas__IdSub__3C69FB99">
+      <End Role="SubOpciones" EntitySet="SubOpciones" />
+      <End Role="Pantallas" EntitySet="Pantallas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Permisos__IdUsua__46E78A0C" Association="CoopeBankModel.FK__Permisos__IdUsua__46E78A0C">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Permisos" EntitySet="Permisos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AHORROS_BIT_TRAS">
+    <Key>
+      <PropertyRef Name="cod_cliente" />
+      <PropertyRef Name="num_contrato" />
+      <PropertyRef Name="fecIngreso" />
+    </Key>
+    <Property Name="cod_cliente" Type="Int32" Nullable="false" />
+    <Property Name="num_contrato" Type="Int32" Nullable="false" />
+    <Property Name="accion" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="fecIngreso" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="codUsuario" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="IdModulo" />
+    </Key>
+    <Property Name="IdModulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesModulo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EstModulo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SubOpciones" Relationship="CoopeBankModel.FK__SubOpcion__IdMod__3B75D760" FromRole="Modulos" ToRole="SubOpciones" />
+  </EntityType>
+  <EntityType Name="Pantallas">
+    <Key>
+      <PropertyRef Name="IdPantalla" />
+    </Key>
+    <Property Name="IdSubOp" Type="Int32" Nullable="false" />
+    <Property Name="IdPantalla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesPantalla" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NomPantalla" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EstPantalla" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SubOpciones" Relationship="CoopeBankModel.FK__Pantallas__IdSub__3C69FB99" FromRole="Pantallas" ToRole="SubOpciones" />
+  </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+      <PropertyRef Name="IdObjeto" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <Property Name="IdObjeto" Type="Int32" Nullable="false" />
+    <Property Name="Visible" Type="Int32" Nullable="false" />
+    <Property Name="Lectura" Type="Int32" Nullable="false" />
+    <Property Name="Escritura" Type="Int32" Nullable="false" />
+    <Property Name="Borrado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="CoopeBankModel.FK__Permisos__IdUsua__46E78A0C" FromRole="Permisos" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="SubOpciones">
+    <Key>
+      <PropertyRef Name="IdSubOp" />
+    </Key>
+    <Property Name="IdModulo" Type="Int32" Nullable="false" />
+    <Property Name="IdSubOp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesSubOp" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NomBoton" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EstSuubOp" Type="Int32" Nullable="false" />
+    <Property Name="ImgIndex" Type="Int32" />
+    <NavigationProperty Name="Modulos" Relationship="CoopeBankModel.FK__SubOpcion__IdMod__3B75D760" FromRole="SubOpciones" ToRole="Modulos" />
+    <NavigationProperty Name="Pantallas" Relationship="CoopeBankModel.FK__Pantallas__IdSub__3C69FB99" FromRole="SubOpciones" ToRole="Pantallas" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Clave" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="CambiarClave" Type="Int32" />
+    <NavigationProperty Name="Permisos" Relationship="CoopeBankModel.FK__Permisos__IdUsua__46E78A0C" FromRole="Usuarios" ToRole="Permisos" />
+  </EntityType>
+  <Association Name="FK__SubOpcion__IdMod__3B75D760">
+    <End Type="CoopeBankModel.Modulos" Role="Modulos" Multiplicity="1" />
+    <End Type="CoopeBankModel.SubOpciones" Role="SubOpciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulos">
+        <PropertyRef Name="IdModulo" />
+      </Principal>
+      <Dependent Role="SubOpciones">
+        <PropertyRef Name="IdModulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pantallas__IdSub__3C69FB99">
+    <End Type="CoopeBankModel.SubOpciones" Role="SubOpciones" Multiplicity="1" />
+    <End Type="CoopeBankModel.Pantallas" Role="Pantallas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubOpciones">
+        <PropertyRef Name="IdSubOp" />
+      </Principal>
+      <Dependent Role="Pantallas">
+        <PropertyRef Name="IdSubOp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Permisos__IdUsua__46E78A0C">
+    <End Type="CoopeBankModel.Usuarios" Role="Usuarios" Multiplicity="1" />
+    <End Type="CoopeBankModel.Permisos" Role="Permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Permisos">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

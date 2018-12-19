@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CoopeBankModelStoreContainer" CdmEntityContainer="CoopeBankEntities">
+    <EntitySetMapping Name="AHORROS_BIT_TRAS">
+      <EntityTypeMapping TypeName="CoopeBankModel.AHORROS_BIT_TRAS">
+        <MappingFragment StoreEntitySet="AHORROS_BIT_TRAS">
+          <ScalarProperty Name="codUsuario" ColumnName="codUsuario" />
+          <ScalarProperty Name="fecIngreso" ColumnName="fecIngreso" />
+          <ScalarProperty Name="accion" ColumnName="accion" />
+          <ScalarProperty Name="num_contrato" ColumnName="num_contrato" />
+          <ScalarProperty Name="cod_cliente" ColumnName="cod_cliente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Modulos">
+      <EntityTypeMapping TypeName="CoopeBankModel.Modulos">
+        <MappingFragment StoreEntitySet="Modulos">
+          <ScalarProperty Name="EstModulo" ColumnName="EstModulo" />
+          <ScalarProperty Name="DesModulo" ColumnName="DesModulo" />
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pantallas">
+      <EntityTypeMapping TypeName="CoopeBankModel.Pantallas">
+        <MappingFragment StoreEntitySet="Pantallas">
+          <ScalarProperty Name="EstPantalla" ColumnName="EstPantalla" />
+          <ScalarProperty Name="NomPantalla" ColumnName="NomPantalla" />
+          <ScalarProperty Name="DesPantalla" ColumnName="DesPantalla" />
+          <ScalarProperty Name="IdPantalla" ColumnName="IdPantalla" />
+          <ScalarProperty Name="IdSubOp" ColumnName="IdSubOp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permisos">
+      <EntityTypeMapping TypeName="CoopeBankModel.Permisos">
+        <MappingFragment StoreEntitySet="Permisos">
+          <ScalarProperty Name="Borrado" ColumnName="Borrado" />
+          <ScalarProperty Name="Escritura" ColumnName="Escritura" />
+          <ScalarProperty Name="Lectura" ColumnName="Lectura" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="IdObjeto" ColumnName="IdObjeto" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubOpciones">
+      <EntityTypeMapping TypeName="CoopeBankModel.SubOpciones">
+        <MappingFragment StoreEntitySet="SubOpciones">
+          <ScalarProperty Name="ImgIndex" ColumnName="ImgIndex" />
+          <ScalarProperty Name="EstSuubOp" ColumnName="EstSuubOp" />
+          <ScalarProperty Name="NomBoton" ColumnName="NomBoton" />
+          <ScalarProperty Name="DesSubOp" ColumnName="DesSubOp" />
+          <ScalarProperty Name="IdSubOp" ColumnName="IdSubOp" />
+          <ScalarProperty Name="IdModulo" ColumnName="IdModulo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="CoopeBankModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="CambiarClave" ColumnName="CambiarClave" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Apellido2" ColumnName="Apellido2" />
+          <ScalarProperty Name="Apellido1" ColumnName="Apellido1" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Usuario" ColumnName="Usuario" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

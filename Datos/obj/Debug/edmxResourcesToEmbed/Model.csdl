@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CoopeBankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AHORROS_BIT_TRAS">
+    <Key>
+      <PropertyRef Name="cod_cliente" />
+      <PropertyRef Name="num_contrato" />
+      <PropertyRef Name="fecIngreso" />
+    </Key>
+    <Property Name="cod_cliente" Type="Int32" Nullable="false" />
+    <Property Name="num_contrato" Type="Int32" Nullable="false" />
+    <Property Name="accion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fecIngreso" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="codUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Modulos">
+    <Key>
+      <PropertyRef Name="IdModulo" />
+    </Key>
+    <Property Name="IdModulo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesModulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EstModulo" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SubOpciones" Relationship="Self.FK__SubOpcion__IdMod__3B75D760" FromRole="Modulos" ToRole="SubOpciones" />
+  </EntityType>
+  <EntityType Name="Pantallas">
+    <Key>
+      <PropertyRef Name="IdPantalla" />
+    </Key>
+    <Property Name="IdSubOp" Type="Int32" Nullable="false" />
+    <Property Name="IdPantalla" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesPantalla" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NomPantalla" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EstPantalla" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SubOpciones" Relationship="Self.FK__Pantallas__IdSub__3C69FB99" FromRole="Pantallas" ToRole="SubOpciones" />
+  </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+      <PropertyRef Name="IdObjeto" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" />
+    <Property Name="IdObjeto" Type="Int32" Nullable="false" />
+    <Property Name="Visible" Type="Int32" Nullable="false" />
+    <Property Name="Lectura" Type="Int32" Nullable="false" />
+    <Property Name="Escritura" Type="Int32" Nullable="false" />
+    <Property Name="Borrado" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK__Permisos__IdUsua__46E78A0C" FromRole="Permisos" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="SubOpciones">
+    <Key>
+      <PropertyRef Name="IdSubOp" />
+    </Key>
+    <Property Name="IdModulo" Type="Int32" Nullable="false" />
+    <Property Name="IdSubOp" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DesSubOp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NomBoton" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EstSuubOp" Type="Int32" Nullable="false" />
+    <Property Name="ImgIndex" Type="Int32" />
+    <NavigationProperty Name="Modulos" Relationship="Self.FK__SubOpcion__IdMod__3B75D760" FromRole="SubOpciones" ToRole="Modulos" />
+    <NavigationProperty Name="Pantallas" Relationship="Self.FK__Pantallas__IdSub__3C69FB99" FromRole="SubOpciones" ToRole="Pantallas" />
+  </EntityType>
+  <EntityType Name="TipoServicioSinpe">
+    <Key>
+      <PropertyRef Name="codServicio" />
+    </Key>
+    <Property Name="codServicio" Type="Int32" Nullable="false" />
+    <Property Name="DescServicio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TipoServicio" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="IdUsuario" />
+    </Key>
+    <Property Name="IdUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Clave" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Apellido2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="Int32" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="CambiarClave" Type="Int32" />
+    <NavigationProperty Name="Permisos" Relationship="Self.FK__Permisos__IdUsua__46E78A0C" FromRole="Usuarios" ToRole="Permisos" />
+  </EntityType>
+  <EntityType Name="vTipoNomina">
+    <Key>
+      <PropertyRef Name="NOMINA" />
+      <PropertyRef Name="DESCRIPCION" />
+    </Key>
+    <Property Name="NOMINA" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DESCRIPCION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__SubOpcion__IdMod__3B75D760">
+    <End Role="Modulos" Type="Self.Modulos" Multiplicity="1" />
+    <End Role="SubOpciones" Type="Self.SubOpciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modulos">
+        <PropertyRef Name="IdModulo" />
+      </Principal>
+      <Dependent Role="SubOpciones">
+        <PropertyRef Name="IdModulo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pantallas__IdSub__3C69FB99">
+    <End Role="SubOpciones" Type="Self.SubOpciones" Multiplicity="1" />
+    <End Role="Pantallas" Type="Self.Pantallas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubOpciones">
+        <PropertyRef Name="IdSubOp" />
+      </Principal>
+      <Dependent Role="Pantallas">
+        <PropertyRef Name="IdSubOp" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Permisos__IdUsua__46E78A0C">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="1" />
+    <End Role="Permisos" Type="Self.Permisos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="IdUsuario" />
+      </Principal>
+      <Dependent Role="Permisos">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CoopeBankEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AHORROS_BIT_TRAS" EntityType="Self.AHORROS_BIT_TRAS" />
+    <EntitySet Name="Modulos" EntityType="Self.Modulos" />
+    <EntitySet Name="Pantallas" EntityType="Self.Pantallas" />
+    <EntitySet Name="Permisos" EntityType="Self.Permisos" />
+    <EntitySet Name="SubOpciones" EntityType="Self.SubOpciones" />
+    <EntitySet Name="TipoServicioSinpe" EntityType="Self.TipoServicioSinpe" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <EntitySet Name="vTipoNomina" EntityType="Self.vTipoNomina" />
+    <AssociationSet Name="FK__SubOpcion__IdMod__3B75D760" Association="Self.FK__SubOpcion__IdMod__3B75D760">
+      <End Role="Modulos" EntitySet="Modulos" />
+      <End Role="SubOpciones" EntitySet="SubOpciones" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pantallas__IdSub__3C69FB99" Association="Self.FK__Pantallas__IdSub__3C69FB99">
+      <End Role="SubOpciones" EntitySet="SubOpciones" />
+      <End Role="Pantallas" EntitySet="Pantallas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Permisos__IdUsua__46E78A0C" Association="Self.FK__Permisos__IdUsua__46E78A0C">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Permisos" EntitySet="Permisos" />
+    </AssociationSet>
+    <EntitySet Name="CargaPagosCGP" EntityType="CoopeBankModel.CargaPagosCGP" />
+    <FunctionImport Name="consultarPagosCGP" ReturnType="Collection(CoopeBankModel.consultarPagosCGP_Result)">
+      <Parameter Name="tipoPago" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="consultarNominaPago" ReturnType="Collection(CoopeBankModel.consultarNominaPago_Result)">
+      <Parameter Name="fechaPago" Mode="In" Type="DateTime" />
+      <Parameter Name="tipoNomina" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="ParametrosArcCGP" EntityType="CoopeBankModel.ParametrosArcCGP" />
+  </EntityContainer>
+  <EntityType Name="CargaPagosCGP">
+    <Key>
+      <PropertyRef Name="IdRegistro" />
+    </Key>
+    <Property Name="IdRegistro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdDestino" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TitularServicio" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CuentaClienteDestino" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Monto" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="IdUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="consultarPagosCGP_Result">
+    <Property Type="Int32" Name="CodMoneda" Nullable="true" />
+    <Property Type="String" Name="Servicio" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="IdNegocio" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="NomNegocio" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CuentaClienteOrigen" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="IdDestino" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="TitularServicio" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CuentaClienteDestino" Nullable="true" MaxLength="100" />
+    <Property Type="Decimal" Name="Monto" Nullable="true" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="consultarNominaPago_Result">
+    <Property Type="Int32" Name="CodMoneda" Nullable="true" />
+    <Property Type="String" Name="Servicio" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="IdNegocio" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="NomNegocio" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CuentaClienteOrigen" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="IdDestino" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="TitularServicio" Nullable="false" MaxLength="70" />
+    <Property Type="String" Name="CuentaClienteDestino" Nullable="true" MaxLength="50" />
+    <Property Type="Decimal" Name="Monto" Nullable="false" Precision="28" Scale="8" />
+  </ComplexType>
+  <EntityType Name="ParametrosArcCGP">
+    <Key>
+      <PropertyRef Name="IdRegistro" />
+    </Key>
+    <Property Name="IdRegistro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodDolares" Type="Int32" />
+    <Property Name="CodColones" Type="Int32" />
+    <Property Name="IdNumEnvio" Type="Int32" Nullable="false" />
+    <Property Name="IdConsecutivo" Type="Int32" Nullable="false" />
+    <Property Name="FecGeneracion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CodEntidad" Type="Int32" Nullable="false" />
+    <Property Name="CuentaClienteOrigenDol" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CuentaClienteOrigenCol" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdNegocio" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NomNegocio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="FecModificacion" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+</Schema>

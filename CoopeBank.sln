@@ -1,0 +1,93 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppEscritorio", "MigraCoopecaja\AppEscritorio.csproj", "{16B33DE3-67C2-4257-BB4F-2E8570678EFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{E64CB9C8-7E29-45E2-800F-0FA870AD4305}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://proyectoscgr.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Datos\\Datos.csproj
+		SccProjectName1 = Datos
+		SccLocalPath1 = Datos
+		SccProjectUniqueName2 = Logica\\Logica.csproj
+		SccProjectName2 = Logica
+		SccLocalPath2 = Logica
+		SccProjectUniqueName3 = MigraCoopecaja\\AppEscritorio.csproj
+		SccProjectName3 = MigraCoopecaja
+		SccLocalPath3 = MigraCoopecaja
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Debug|x64.Build.0 = Debug|Any CPU
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Debug|x86.Build.0 = Debug|Any CPU
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Release|Mixed Platforms.Build.0 = Release|x86
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Release|x64.ActiveCfg = Release|x64
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Release|x64.Build.0 = Release|x64
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Release|x86.ActiveCfg = Release|x86
+		{16B33DE3-67C2-4257-BB4F-2E8570678EFC}.Release|x86.Build.0 = Release|x86
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Release|x64.ActiveCfg = Release|Any CPU
+		{4DDFD11F-CEEC-48DE-8B7C-A9CBC432CA43}.Release|x86.ActiveCfg = Release|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Release|x64.ActiveCfg = Release|Any CPU
+		{E64CB9C8-7E29-45E2-800F-0FA870AD4305}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VSStyle = OSX (Brushed).vssf
+		VSTargetControls = Forms
+		VSToolStripStyle = Professional
+		VSTextShadow = True
+		VSSkinFlatStyles = False
+		VSSkinToggleButtons = True
+		VSUseSystemFonts = False
+		VSCustomBkgrdPaint = True
+	EndGlobalSection
+EndGlobal
